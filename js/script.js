@@ -4,10 +4,9 @@ createApp({
     data() {
         return {
             discs: [],
-        }
-    },methods:{
-        getImgPath(name) {
-            return new URL(`../img/Flags/${name}.svg`, import.meta.url).href;
+            isClicked: false,
+            cardSelected: '',
+            
         }
     },
     mounted() {
@@ -17,5 +16,17 @@ createApp({
                 this.discs = response.data.results;
                 console.log(this.discs);
             })
+    },
+    methods: {
+        showDetails(index) {
+            this.isClicked = true;
+            this.cardSelected = this.discs[index];
+        },
+        close(){
+            this.isClicked = false;
+
+        }
     }
+    
+
 }).mount('#app')

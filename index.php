@@ -16,6 +16,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Spotify</title>
 </head>
 
@@ -24,21 +26,37 @@
         <header>
             <section class="container d-flex align-items-center">
                 <div>
-                    <img src="./img/logo.png" alt="">
+                    <a href="./index.php">
+                        <img src="./img/logo.png" alt="">
+                    </a>
                 </div>
             </section>
         </header>
-        <main class="ms_container d-flex flex-wrap">
-            <div class="card text-white text-center" v-for="(disc,index) in discs">
-                <img class="card-img-top mx-auto my-4" :src="disc.poster" alt="Card image cap">
-                <div class="card-body">
-                    <h5>{{disc.title}}</h5>
-                    <p class="card-title">{{disc.author}}</p>
-                    <p class="card-text">{{disc.year}}</p>
+        <article class="d-flex justify-content-lg-center align-items-lg-center">
+            <main class="ms_container d-flex flex-wrap">
+                <div class="card text-white text-center" v-for="(disc,index) in discs" @click="showDetails(index)">
+                    <img class="card-img-top mx-auto my-4" :src="disc.poster" alt="Card image cap">
+                    <div class="card-body">
+                        <h5>{{disc.title}}</h5>
+                        <p class="card-title">{{disc.author}}</p>
+                        <p class="card-text">{{disc.year}}</p>
+                    </div>
+                </div>
+            </main>
+            <div class="hidden d-flex justify-content-center align-items-center" v-if="isClicked">
+                <i @click="close" class="fa-regular fa-circle-xmark fa-shake" style="color: #06e014;"></i>
+                <div class="card text-white text-center">
+                    <img class="card-img-top mx-auto my-4" :src="cardSelected.poster" alt="Card image cap">
+                    <div class="card-body">
+                        <h5>{{cardSelected.title}}</h5>
+                        <p class="card-title">{{cardSelected.author}}</p>
+                        <p class="card-text">{{cardSelected.year}}</p>
+                    </div>
                 </div>
             </div>
+        </article>
 
-        </main>
+
     </div>
     <script src="./js/script.js"></script>
 </body>

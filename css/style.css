@@ -1,49 +1,106 @@
-#app{
+#app {
     height: 100vh;
     width: 100%;
 }
+
 :root {
     --card-bg: #112030;
+    --body-bg: #1D2D3C;
     --header-h: 80px;
     --main-h: calc(100vh - 80px);
+    --hover: #112031bf;
 }
 
 body {
-    background-color: #1D2D3C;
+    background-color: var(--body-bg);
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-header{
+header {
     background-color: #06131F;
     height: var(--header-h);
 }
 
-main{
-    height: var(--main-h);
+article {
     overflow-y: auto;
+    position: relative;
 }
 
-section{
+/* Imposta la larghezza della scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Imposta il colore della parte visibile della scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: var(--card-bg);
+}
+
+/* Imposta il colore della parte invisibile della scrollbar */
+::-webkit-scrollbar-track {
+    background-color: #385672;
+}
+
+
+
+main {
+    height: var(--main-h);
+}
+
+section {
     height: 100%;
 }
 
-img{
+img {
     max-width: 80%;
 }
 
-section img{
+section img {
     max-width: 40px;
 }
 
 
-.ms_container{
+.ms_container {
     width: 60%;
     margin: 0 auto;
-    gap: 40px;
 }
 
 .card {
     background-color: #06131F;
-    width: calc(100% / 3 - 40px);
-    border: 1px solid red;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  @media (min-width: 576px) {
+    .card {
+      width: calc(100% / 2 - 20px);
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .card {
+      width: calc(100% / 3 - 20px);
+    }
+  }
+  
+
+.hidden {
+    width: 80%;
+    position: fixed;
+    top: 130px;
+    z-index: 10;
+    background-color: var(--hover);
+}
+
+i {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
 }
