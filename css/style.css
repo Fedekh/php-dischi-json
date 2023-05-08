@@ -1,12 +1,26 @@
-body {
-    background-color: #1D2D3C;
+#app{
     height: 100vh;
     width: 100%;
 }
+:root {
+    --card-bg: #112030;
+    --header-h: 80px;
+    --main-h: calc(100vh - 80px);
+}
+
+body {
+    background-color: #1D2D3C;
+}
+
 
 header{
     background-color: #06131F;
-    height: 80px;
+    height: var(--header-h);
+}
+
+main{
+    height: var(--main-h);
+    overflow-y: auto;
 }
 
 section{
@@ -14,25 +28,22 @@ section{
 }
 
 img{
+    max-width: 80%;
+}
+
+section img{
     max-width: 40px;
 }
 
-h1{
-    color: #c81919;
-}
-
-:root {
-    --card-bg: #112030;
-}
 
 .ms_container{
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     gap: 40px;
 }
 
-.prova {
+.card {
+    background-color: #06131F;
     width: calc(100% / 3 - 40px);
     border: 1px solid red;
-    height: 300px;
 }

@@ -20,7 +20,6 @@
 </head>
 
 <body>
-
     <div id="app">
         <header>
             <section class="container d-flex align-items-center">
@@ -29,16 +28,19 @@
                 </div>
             </section>
         </header>
-        <main class="ms_container d-flex my-5 flex-wrap">
-                <div class="prova"></div>
-                <div class="prova"></div>
-                <div class="prova"></div>
-                <div class="prova"></div>
-                <div class="prova"></div>
-                <div class="prova"></div>
+        <main class="ms_container d-flex flex-wrap">
+            <div class="card text-white text-center" v-for="(disc,index) in discs">
+                <img class="card-img-top mx-auto my-4" :src="disc.poster" alt="Card image cap">
+                <div class="card-body">
+                    <h5>{{disc.title}}</h5>
+                    <p class="card-title">{{disc.author}}</p>
+                    <p class="card-text">{{disc.year}}</p>
+                </div>
+            </div>
+
         </main>
-        <script src="./js/script.js"></script>
     </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
