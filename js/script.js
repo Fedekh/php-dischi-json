@@ -6,7 +6,7 @@ createApp({
             discs: [],
             isClicked: false,
             cardSelected: '',
-            
+
         }
     },
     mounted() {
@@ -22,11 +22,8 @@ createApp({
             this.isClicked = true;
             this.cardSelected = this.discs[index];
         },
-        close(){
-            this.isClicked = false;
-
-        }
+       
     }
-    
+
 
 }).mount('#app')

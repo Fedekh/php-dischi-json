@@ -44,7 +44,7 @@
                 </div>
             </main>
             <div class="hidden d-flex justify-content-center align-items-center" v-if="isClicked">
-                <i @click="close" class="fa-regular fa-circle-xmark fa-shake" style="color: #06e014;"></i>
+                <i @click="isClicked = false" class="fa-regular fa-circle-xmark fa-shake" style="color: #06e014;"></i>
                 <div class="card text-white text-center">
                     <img class="card-img-top mx-auto my-4" :src="cardSelected.poster" alt="Card image cap">
                     <div class="card-body">
